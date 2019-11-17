@@ -4,6 +4,8 @@
 // []amountをprivateにする
 // []Dollarの副作用どうする
 // [x]Moneyの丸め処理をどうする
+// [x]equals
+// []hashCode()
 
 package money;
 
@@ -27,4 +29,15 @@ public class MoneyTest {
 		product = five.times(3);
 		assertEquals(15, product.amount);
 	}
+
+	/*
+	 * 第3章
+	 * 5ドルは5ドルでなければならない
+	 */
+	@Test
+	public void testEquality() {
+		assertTrue(new Dollar(5).equals(new Dollar(5)));
+		assertFalse(new Dollar(5).equals(new Dollar(6)));
+	}
+
 }
